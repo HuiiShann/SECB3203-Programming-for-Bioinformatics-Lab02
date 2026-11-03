@@ -1,7 +1,5 @@
 # AI USE LOG
 
-<!-- SECB3203 prompt log. Policy: PROPOSED - for approval by the SECB3203 course team before circulation to students. Fill in, then run: python tools/check_ai_log.py AI_USE_LOG.md --assessment <key> -->
-
 - Course: SECB3203
 - Assessment: Lab2
 - Student name: Tan Hui Shan
@@ -16,7 +14,7 @@
 - [x] I used AI. Every interaction that influenced my work is logged below. The log is true and complete.
 
 ## Entry 1
-- Date: 28 October 2026, 11:30PM
+- Date: 28 October 2026, 11:30AM
 - Tool: Anthropic (2026). Claude (Claude Sonnet 5.5). Retrieved 28 October 2026 from https://claude.ai
 - Purpose: explain, hint
 - Prompt: "Guide me from Task 1 to Task 5 step by step. For task 1, what keyword I need to use to keep letters only?"

@@ -13,7 +13,7 @@ def is_valid_dna(seq: str, allow_n: bool = False) -> bool:
     if not seq:
         return False
     allowed = DNA_BASES|{"N"} if allow_n else DNA_BASES
-    return set(seq.upper()) <= allowed
+    return set(seq) <= allowed
 
 
 def gc_content(seq: str) -> float:
