@@ -5,7 +5,7 @@ def test_find_motif_normal():
     """Test normal"""
     assert find_motif("ATCGATCG","CG") == [2,6]
 
-def test_find_motif_boundary():
+def test_find_motif_boundary_and_case():
     """Test boundary"""
     assert find_motif("aAaA", "aA") == [0,1,2]
 

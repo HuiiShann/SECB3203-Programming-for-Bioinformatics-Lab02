@@ -5,31 +5,31 @@ DNA_BASES = frozenset("ACGT")
 
 def clean_sequence(raw: str) -> str:
     """Upper-case raw text and drop spaces, digits and newlines."""
-    return "".join(s for s in raw.upper()if s.isalpha())
+    return "".join(s for s in raw.upper() if s.isalpha())
 
 
 def is_valid_dna(seq: str, allow_n: bool = False) -> bool:
     """True for a non-empty string of A, C, G, T (and N when allowed)."""
     if not seq:
         return False
-    allowed = DNA_BASES|{"N"} if allow_n else DNA_BASES
+    allowed = DNA_BASES | {"N"} if allow_n else DNA_BASES
     return set(seq) <= allowed
 
 
 def gc_content(seq: str) -> float:
     """Return GC percentage (0-100); ValueError if empty or not A/C/G/T."""
-    if not is_valid_dna(seq):
+    seq_u = seq.upper()
+    if not is_valid_dna(seq_u):
         raise ValueError("Invalid sequence")
-    seq=seq.upper()
-    return (seq.count("G")+seq.count("C"))/len(seq) *100
+    return (seq_u.count("G") + seq_u.count("C")) / len(seq_u) * 100
 
 
 def transcribe(dna: str) -> str:
     """Return the RNA copy of a DNA sequence (T becomes U)."""
-    if not is_valid_dna(dna):
-            raise ValueError("Invalid DNA")
-    dna.upper()
-    return dna.upper().replace("T","U")
+    dna_u = dna.upper()
+    if not is_valid_dna(dna_u):
+        raise ValueError(f"invalid DNA sequence: {dna!r}")
+    return dna_u.replace("T", "U")
 
 
 def find_motif(seq: str, motif: str) -> list[int]:
